@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Music Player</title>
+  </head>
+  <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="file" id="upload" accept=".mp3, .mp4, .webm, .wav"/><br>
+<audio id="audio" controls>
+  <source src="" id="src" />
+</audio><br>
+<button onClick="play();">Play</button><br>
+<button onClick="pause();">Pause</button><br>
+<script>
+var x = document.getElementById("audio");
+function handleFiles(event) {
+    var files = event.target.files;
+    $("#src").attr("src", URL.createObjectURL(files[0]));
+    document.getElementById("audio").load();
+    x.play();
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
+function play(){
+  x.play();
+}
+function pause(){
+  x.pause();
+}
+</script>
+<style>
+html {
+  background: black;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+</style><br>
+<h1>🇴​​​​​🇳​​​​​🇱​​​​​🇮​​​​​🇳​​​​​🇪​​​​​<br>
+🇲​​​​​🇺​​​​​🇸​​​​​🇮​​​​​🇨​​​​​<br>
+🇵​​​​​🇱​​​​​🇦​​​​​🇾​​​​​🇪​​​​​🇷​​​​​<br>
+</h1>
+  </body>
+</html>
